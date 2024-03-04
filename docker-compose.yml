@@ -1,0 +1,15 @@
+version: '3'
+services:
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - "3001:3001"  # Asegúrate de que el puerto sea accesible
+
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "3000:3000"  # Asegúrate de que el puerto sea accesible
+    depends_on:
+      - backend
